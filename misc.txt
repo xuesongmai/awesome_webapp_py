@@ -1,0 +1,6 @@
+mysql8.0 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password。8.0修改密码加密方式，以兼容5.0
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; 
+创建用户
+create user  'admin'@'%' identified by 'admin123';
+grant all on *.* to 'admin'@'%'
+flush privileges;
